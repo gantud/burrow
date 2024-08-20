@@ -1,0 +1,21 @@
+
+// Social Icons Stylers //
+.soc-icon-styler(@property, @color){
+	a{
+		.fa{
+			transition: all .2s ease-in-out;
+			color: @black;
+		}
+	}
+}
+// assigns property/value to social buttons on hover state
+.soc-icon-styler-hover(@property, @color){
+	a{
+
+		&:hover, &:active, &:focus {
+			.fa{
+				@{property}: @color;
+			}
+		}
+	}
+}
