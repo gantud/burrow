@@ -1,0 +1,138 @@
+<!-- GENESIS PEREZ PEREZ ☺☺☺-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENESIS PEREZ PEREZ | Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <!-- LESS CSS -->
+    <link rel="stylesheet/less" type="text/css" href="less/theme.less">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- Social Section -->
+    <div class="side-tabs">
+        <ul class="social-tabs">
+            <li>
+                <a href="https://www.linkedin.com/in/genesis-perez-perez-8246a2287/" target="_blank" class="social-linkedin" title="Linkedin Genesis">
+                    <i class="fa fa-linkedin"></i>
+                    <span class="sr-only">to know me!!</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/millersmotorsports/" target="_blank" class="social-instagram" title="Instagram Genesis">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Folto know me!!</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/genesis.perez.376/" target="_blank" class="social-facebook" title="Facebook Genesis">
+                    <i class=" fa fa-facebook"></i>
+                    <span class="sr-only">to know me!!)</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- profile Section -->
+    <section class="profile">
+        <img src="/images/photo.jpg" alt="Genesis Perez P" class="profile-image">
+        <h1>GENESIS PEREZ PEREZ</h1>
+        <h2 class="tagline">FRONT END DEVELOPER</h2>
+		<div class="header-contact">
+			<a class="contact-link" href="mailto:genesis.perezp25134@gmail.com"  title="Contact Genesis Perez P"><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact Me</span></a>	
+		</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>A bit of me</h2>
+        <p>Hi, I'm Genesis Perez Perez, a software developer with over 4 years of experience, i have passion for building and designing innovative solutions. I specialize in creating robust and elegant software that brings ideas to life.</p>
+        <div class="social-icons">
+            <a href="https://github.com/gantud/burrow.git" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <!-- More social links -->
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="projects"> 
+        <div class="project-grid">
+            <div class="side-bar">
+                <h5 class="bar-item">PROJECTS</h5>
+                <button class="tablink tab-red" onclick="projectPorfolio(event, 'homepage')">Homepage</button>
+                <button class="tablink" onclick="projectPorfolio(event, 'dinamicCar')">Dinamic Car</button>
+                <button class="tablink nocomplete" title="cooming soon" disabled onclick="projectPorfolio(event, 'weatherApp')">Api Weather App</button>
+                <button class="tablink nocomplete" title="cooming soon" disabled onclick="projectPorfolio(event, 'toDoList')">To Do List</button>
+            </div>
+    
+              <div class="project-info">
+                <div class="project-description"><h5>DESCRIPTION</h5></div>
+              
+                <div id="homepage" class="project" style="display:block">
+                  <h2>Homepage</h2>
+                  <p>Featuring a sleek and modern design, This homepage offers a seamless user experience with an intuitive and well-organized content.</p>
+                  <p class="tech-stack">HTML, CSS, JavaScript</p><a href="../Home Page/index.html" target="_blank">LINK</a>
+                </div>
+              
+                <div id="dinamicCar" class="project" style="display:none">
+                  <h2>Dinamic Car</h2>
+                  <p>A straightforward and user-friendly page features a clean design with a simple layout for easy browsing. Add items to your shopping cart with an interactive JavaScript implementation.</p>
+                  <p class="tech-stack">HTML, CSS, JavaScript</p><a href="../Dynamic Car/cart dynamic/index.html" target="_blank">LINK</a>
+                </div>
+              
+                <div id="weatherApp" class="project" style="display:none">
+                  <h2>Api Weather App</h2>
+                  <p></p>
+                  <p></p>
+                </div>
+
+                <div id="toDoList" class="project" style="display:none">
+                    <h2>To Do List</h2>
+                    <p></p>
+                    <p></p>
+                  </div>
+              
+              </div>
+        </div>
+
+
+          <script>
+            function projectPorfolio(evt, projectName) {
+              var i, x, tablinks;
+              x = document.getElementsByClassName("project");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" tab-red", ""); 
+              }
+              document.getElementById(projectName).style.display = "block";
+              evt.currentTarget.className += " tab-red";
+            }
+            </script>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p><a href="mailto:gantud.gennag@gmail.com">Contact: gantud.gennag@gmail.com</a></p>
+        <p>© 2024 Genesis Perez P. All rights reserved.</p>
+    </footer>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="libs/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="libs/bootstrap-3.3.7.min.js"></script>
+    <!-- LESS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1/dist/less.min.js"></script>
+</body>
+</html>

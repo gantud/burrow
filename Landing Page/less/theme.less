@@ -1,0 +1,319 @@
+// Variables
+@primary-color: #ee2a7b;
+@secondary-color: #6228d7;
+@font-color: #333;
+@background-color: #f9f9f9;
+@font-family: 'Helvetica', sans-serif;
+@white: #ffffff;
+
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+@screen-lg-max: 1529px;
+@screen-xl-min: 1530px;
+
+// Mixins
+.border-radius(@radius: 4px) {
+  border-radius: @radius;
+}
+
+
+.social-style{
+    transition: background .3s ease-in-out;
+    font-size: 26px;
+    background-color: #0072FF;
+    display: block;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.tab-red{
+  background-color: @primary-color;
+  color: @white;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padding(@top: 20px, @right: 20px, @bottom: 20px, @left: 20px) {
+  padding: @top @right @bottom @left;
+}
+
+// General Body Styling
+body {
+  font-family: @font-family;
+  color: @font-color;
+  background-color: @background-color;
+  margin: 0;
+  padding: 0;
+}
+
+//Social Section
+.side-tabs{
+    display: block;
+    position: fixed;
+    right: -6px;
+    z-index: 3;
+    top: 135px;
+    .social-tabs{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li{
+            margin-bottom: 10px;
+            a{
+                transition: right .3s ease-in-out;
+                position: relative;
+                right: 0;
+                border: solid 3px @white;
+                color: #0072FF;
+                text-decoration: none;
+                background: transparent;
+                display: block;
+                .fa{
+                    .social-style;
+                    &:before{
+                        line-height: 50px;
+                        color: @white;
+                    }
+                }
+                .fa-instagram{
+                    content: "\f16d";
+                }
+                .fa-linkedin{
+                    content: "\f08c";
+                }
+                .fa-instagram{
+                    content:"\f09a";
+                }
+                &:hover{
+                    right: 3px;
+                    .fa{
+                        background-color: #f81c0d;
+                    }
+                }
+                .sr-only{
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    margin: -1px;
+                    padding: 0;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+// Profile Section
+body{
+  background: linear-gradient(to right, @primary-color, @secondary-color);
+}
+
+.profile {
+  @profile-height: 100vh;
+  @cta-bg-color: @primary-color;
+
+margin: 0 auto;
+  height: @profile-height;
+  color: white;
+  text-align: center;
+  @media (min-width: @screen-xl-min) {
+    height: 113vh;
+  }
+  .profile-image {
+    .border-radius(@border-radius);
+    @border-radius: 50%;
+    width: 80%;
+    border: 3px solid @white;
+    margin-top: 50px;
+    @media (min-width: @screen-md-min) {
+      width: 50%;
+    }
+  }
+  h1 {
+    margin-top: 20px;
+    font-size: 3rem;
+  }
+  .tagline {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .header-contact{
+    display: flex;
+    transition: background-color .3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid @white;
+    margin: 0 auto;
+    &:hover{
+        background-color: #f81c0d;
+    }
+    a{
+        color: @white;
+        text-decoration: none;
+        background: transparent;
+    }
+    .fa{
+        transition: color .3s ease-in-out;
+        color: @white;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    span{
+        transition: color .3s ease-in-out;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: @white;
+    }
+    }
+
+    @media (min-width: @screen-sm-min) {
+      width: 750px;
+    }
+    @media (min-width: @screen-md-min) {
+      width: 970px;
+    }
+    @media (min-width: @screen-lg-min) {
+      width: 1170px;
+    }
+    @media (min-width: @screen-xl-min) {
+      width: 1500px;
+    }
+
+}
+
+// About Section
+.about {
+  padding: 80px 20px;
+  background-color: white;
+  text-align: center;
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+  .social-icons {
+    margin-top: 20px;
+    a {
+      transition: color .3s ease-in-out;
+      color: @font-color;
+      margin: 0 10px;
+      font-size: 3rem;
+      &:hover {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+// Project Section
+.projects {
+  padding: 80px 20px;
+  background-color: @background-color;
+  .project-grid{
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    .side-bar{
+      width: 150px;
+      .bar-item{
+        width: 100%;
+        display: block;
+        padding: 8px 16px;
+        text-align: left;
+        border: none;
+        white-space: normal;
+        float: none;
+        font-size: 21px;
+      }
+      .tablink{
+        width: 100%;
+        display: block;
+        padding: 8px 16px;
+        text-align: left;
+        border: none;
+        white-space: normal;
+        float: none;
+        outline: 0;
+        font-weight: bold;
+      }
+      .nocomplete{
+        color: #a8a8a8e3;
+      }
+
+    }
+    .project-info{
+      margin-left: 30px;
+      max-width: 600px;
+      background: white;
+      .project-description{
+        padding: 9px;
+        letter-spacing: 5px;
+        .border-radius();
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .project{
+        .tech-stack{
+          color: #f81c0d;
+          font-style: italic;
+          font-weight: 500;
+          display: inline-block;
+        }
+        a{
+          transition: color .3s ease-in-out;
+          margin-left: 15px;
+          font-size: 24px;
+          color: @font-color;
+          position: relative;
+          &:hover{
+            text-decoration: none;
+            color: @primary-color;
+          }
+        }
+      }
+    }
+  }   
+}
+
+// Footer Section
+footer {
+  padding: 40px 20px;
+  background-color: @primary-color;
+  color: white;
+  text-align: center;
+  p {
+    margin: 0;
+    font-size: 1rem;
+    a{
+      transition: color .3s ease-in-out;
+      color: @white;
+      font-size: 18px;
+&:hover{
+  text-decoration: none;
+}
+    }
+  }
+}
